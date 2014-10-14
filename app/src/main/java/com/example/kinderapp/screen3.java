@@ -5,5 +5,5 @@ import android.app.Activity;
 /**
  * Created by Sarah on 13.10.14.
  */
-public class screen2 extends Activity {
+public class screen3  extends Activity {
 }
