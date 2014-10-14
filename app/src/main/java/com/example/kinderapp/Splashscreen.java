@@ -6,12 +6,17 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 
-public class MyActivity extends Activity {
+public class splashscreen extends Activity {
+
+    private static int SPLASH_TIME_OUT = 3000;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my);
+        setContentView(R.layout.splashscreen);
+
+
     }
 
 
@@ -33,5 +38,6 @@ public class MyActivity extends Activity {
         }
         return super.onOptionsItemSelected(item);
     }
+
 }
 
