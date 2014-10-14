@@ -5,9 +5,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 /**
  * Created by Sarah on 13.10.14.
@@ -18,6 +20,16 @@ public class screen1 extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.screen1);
+
+        final Intent intent1 = new Intent(this, screen2.class);
+        ImageView Kind1 = (ImageView) findViewById(R.id.imgkind1);
+
+        Kind1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(intent1);
+            }
+        });
     }
 
 

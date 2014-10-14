@@ -1,20 +1,32 @@
 package com.example.kinderapp;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.RelativeLayout;
 
 
 public class splashscreen extends Activity {
-
-    private static int SPLASH_TIME_OUT = 3000;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splashscreen);
+
+        final Intent intent = new Intent(this, screen1.class);
+        RelativeLayout Layout = (RelativeLayout) findViewById(R.id.rl1);
+        Layout.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+                startActivity(intent);
+
+      }
+                                  }
+
+        );
 
 
     }
