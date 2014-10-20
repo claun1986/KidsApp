@@ -39,7 +39,7 @@
         android:layout_below="@+id/Krankheiten"
         android:layout_marginTop="30dp"
         android:textColor="#A31D80"
-        android:background="#FFD524"
+        android:background="#ffcccccc"
         android:gravity="center"
         android:textSize="30dp"
         android:textStyle="bold" />
@@ -69,7 +69,9 @@
         android:layout_below="@id/newMedField"
         android:layout_marginTop="30dp"
         android:layout_centerHorizontal="true"
-      />
+        android:textColor="@android:color/white"
+
+        />
 
 
 
@@ -79,13 +81,58 @@
         android:id="@+id/Dauer"
         android:text="Dauer"
         android:textColor="#A31D80"
-        android:background="#FFD524"
+        android:background="#FFCCCCCC"
         android:gravity="center"
         android:textSize="30dp"
         android:textStyle="bold"
         android:layout_below="@+id/add2"
         android:layout_marginTop="30dp"
                                     />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Beginn"
+        android:id="@+id/Beginn"
+        android:textColor="@android:color/white"
+        android:layout_below="@id/Dauer"
+        />
+
+    <DatePicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/Beginn"
+        android:layout_toEndOf="@id/Beginn"
+        android:layout_below="@id/Beginn"
+        android:id="@+id/date"
+        android:textColor="@android:color/white"
+        >
+
+        </DatePicker>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Ende"
+        android:id="@+id/Ende"
+        android:textColor="@android:color/white"
+        android:layout_below="@id/date"
+        />
+
+    <DatePicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/Ende"
+        android:layout_toEndOf="@id/Ende"
+        android:layout_below="@id/Ende"
+        android:textColor="@android:color/white"
+
+        >
+
+    </DatePicker>
 
 
 </RelativeLayout>

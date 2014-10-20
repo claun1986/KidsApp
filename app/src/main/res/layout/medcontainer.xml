@@ -24,39 +24,84 @@
         android:layout_height="30dp"
         android:text="Dosierung"
         android:textStyle="bold"
-
+        android:textSize="20dp"
+        android:textColor="@android:color/white"
         android:id="@+id/Dosierung"
         android:layout_below="@id/neuesMedikament"
         />
 
+
+    <EditText
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:hint="Zahl"
+        android:textColorHint="#c6616161"
+        android:id="@+id/menge"
+        android:layout_below="@id/neuesMedikament"
+        android:layout_toRightOf="@id/Dosierung"
+     />
 
     <Spinner
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/spinner_dosierung"
         android:spinnerMode="dropdown"
-        android:layout_toRightOf="@id/Dosierung"
+        android:layout_toRightOf="@id/menge"
+        android:layout_toEndOf="@id/menge"
         android:layout_below="@id/neuesMedikament"
+
         />
 
-    <Spinner
+    <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/spinner_menge"
-        android:spinnerMode="dropdown"
-        android:layout_toRightOf="@id/spinner_dosierung"
-        android:layout_marginLeft="20dp"
-        android:layout_below="@id/neuesMedikament"
+        android:text="Morgens"
+        android:id="@+id/c1"
+        android:layout_below="@id/Dosierung"
+        android:layout_marginTop="30dp"
+        android:textColor="@android:color/white"
         />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mittags"
+        android:id="@+id/c2"
+        android:layout_toRightOf="@id/c1"
+        android:layout_below="@id/Dosierung"
+        android:layout_marginTop="30dp"
+        android:textColor="@android:color/white"
+        />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Abends"
+        android:id="@+id/c3"
+        android:layout_toRightOf="@id/c2"
+        android:layout_below="@id/Dosierung"
+        android:layout_marginTop="30dp"
+        android:textColor="@android:color/white"
+        />
+
+
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/OK"
         android:text="OK"
         android:layout_below="@id/neuesMedikament"
-        android:layout_toRightOf="@id/spinner_menge"
+        android:layout_toRightOf="@id/spinner_dosierung"
+        android:layout_toEndOf="@id/spinner_dosierung"
         android:textStyle="bold"
+        android:textColor="@android:color/white"
+
         />
+
+
 
 
 
