@@ -22,7 +22,6 @@ public class splashscreen extends Activity {
       @Override
       public void onClick(View v) {
                 startActivity(intent);
-
       }
                                   }
 

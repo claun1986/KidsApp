@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#97646464"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:focusable="true">
+
+    <ImageView
+    android:layout_width="120dp"
+    android:layout_height="120dp"
+    android:id="@+id/imgkind1"
+    android:src="@drawable/icon"
+    android:layout_alignParentTop="true"
+    android:layout_alignParentRight="true"
+    android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="400dp"
+        android:layout_height="70dp"
+        android:id="@+id/Krankheiten"
+        android:layout_toLeftOf="@+id/imgkind1"
+        android:text="Krankheiten"
+        android:textColor="#A31D80"
+        android:textSize="30dp"
+        android:gravity="center"
+        android:paddingTop="10dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="400dp"
+        android:layout_height="50dp"
+        android:id="@+id/Medikamente"
+        android:text="Medikamente"
+        android:layout_below="@+id/Krankheiten"
+        android:layout_marginTop="30dp"
+        android:textColor="#A31D80"
+        android:background="#FFD524"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:id="@+id/neuesMedikament"
+        android:textColor="#FFD524"
+        android:layout_marginTop="20dp"
+        android:gravity="left"
+        android:textSize="20dp"
+        android:layout_below="@+id/Medikamente"
+        android:hint="neues Medikament eingeben"
+        android:textColorHint="#c6616161" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:text="Dosierung"
+        android:id="@+id/Dosierung"
+        android:layout_below="@id/neuesMedikament"
+        />
+
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner_dosierung"
+        android:spinnerMode="dropdown"
+        android:layout_toRightOf="@id/Dosierung"
+        android:layout_below="@id/neuesMedikament"
+        />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner_menge"
+        android:spinnerMode="dropdown"
+        android:layout_toRightOf="@id/spinner_dosierung"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@id/neuesMedikament"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/OK"
+        android:text="OK"
+        android:layout_below="@id/neuesMedikament"
+        android:layout_toRightOf="@id/spinner_menge"
+        />
+
+
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="hinzufügen"
+        android:id="@+id/add2"
+        android:layout_below="@id/spinner_menge"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true" />
+
+
+
+    <TextView
+        android:layout_width="400dp"
+        android:layout_height="50dp"
+        android:id="@+id/Dauer"
+        android:text="Dauer"
+        android:textColor="#A31D80"
+        android:background="#FFD524"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:layout_below="@+id/add2"
+                                    />
+
+
+</RelativeLayout>
+
+    </ScrollView>

@@ -5,4 +5,10 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
+
+    <string-array name="dosierung">
+        <item>mg</item>
+        <item>ml</item>
+        <item>stk</item>
+    </string-array>
 </resources>

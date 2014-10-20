@@ -3,6 +3,7 @@ package com.example.kinderapp;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 /**
  * Created by Sarah on 13.10.14.
@@ -21,6 +23,8 @@ public class screen1 extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.screen1);
 
+        Toast.makeText(getApplicationContext(), "Select a Child", Toast.LENGTH_LONG).show();
+
         final Intent intent1 = new Intent(this, screen2.class);
         ImageView Kind1 = (ImageView) findViewById(R.id.imgkind1);
 
@@ -31,6 +35,8 @@ public class screen1 extends Activity {
             }
         });
     }
+
+
 
 
     @Override
