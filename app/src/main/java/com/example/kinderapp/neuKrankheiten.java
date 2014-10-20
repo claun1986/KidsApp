@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CalendarView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.Adapter;
@@ -43,8 +44,9 @@ public class neuKrankheiten extends Activity{
             }
         });
 
-
-
+        //CALENDER VIEW
+        CalendarView cw1 = (CalendarView) findViewById(R.id.cw1);
+        cw1.setDate(2014);
     }
 
 

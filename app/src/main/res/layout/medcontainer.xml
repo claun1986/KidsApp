@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
 
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
@@ -87,13 +91,70 @@
         />
 
 
+    <TextView
+        android:layout_width="400dp"
+        android:layout_height="50dp"
+        android:id="@+id/Dauer"
+        android:text="Dauer"
+        android:textColor="#A31D80"
+        android:background="#FFCCCCCC"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:layout_below="@+id/c1"
+        android:layout_marginTop="30dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Beginn"
+        android:id="@+id/Beginn"
+        android:textColor="@android:color/white"
+        android:layout_below="@id/Dauer"
+        />
+
+    <CalendarView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/Beginn"
+        android:layout_toEndOf="@id/Beginn"
+        android:layout_below="@id/Beginn"
+        android:id="@+id/cw1"
+        
+        />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Ende"
+        android:id="@+id/Ende"
+        android:textColor="@android:color/white"
+        android:layout_below="@id/cw1"
+        />
+
+    <CalendarView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/cw2"
+        android:layout_toRightOf="@id/Ende"
+        android:layout_toEndOf="@id/Ende"
+        android:layout_below="@id/Ende"
+        android:showWeekNumber="false"
+
+
+        />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/OK"
-        android:text="OK"
-        android:layout_below="@id/neuesMedikament"
+        android:id="@+id/Fertig"
+        android:text="Fertig"
+        android:layout_centerVertical="true"
+        android:layout_below="@id/cw2"
         android:layout_toRightOf="@id/spinner_dosierung"
         android:layout_toEndOf="@id/spinner_dosierung"
         android:textStyle="bold"
@@ -103,6 +164,5 @@
 
 
 
-
-
 </RelativeLayout>
+</ScrollView>
