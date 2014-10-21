@@ -24,14 +24,18 @@
 
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
+        android:layout_width="400dp"
+        android:layout_height="50dp"
         android:text="Dosierung"
+        android:textColor="#A31D80"
+        android:background="#FFCCCCCC"
+        android:gravity="center"
+        android:textSize="30dp"
         android:textStyle="bold"
-        android:textSize="20dp"
-        android:textColor="@android:color/white"
         android:id="@+id/Dosierung"
         android:layout_below="@id/neuesMedikament"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="20dp"
         />
 
 
@@ -43,8 +47,8 @@
         android:hint="Zahl"
         android:textColorHint="#c6616161"
         android:id="@+id/menge"
-        android:layout_below="@id/neuesMedikament"
-        android:layout_toRightOf="@id/Dosierung"
+        android:layout_below="@id/Dosierung"
+        android:layout_centerHorizontal="true"
      />
 
     <Spinner
@@ -52,10 +56,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/spinner_dosierung"
         android:spinnerMode="dropdown"
+        android:layout_below="@id/Dosierung"
         android:layout_toRightOf="@id/menge"
-        android:layout_toEndOf="@id/menge"
-        android:layout_below="@id/neuesMedikament"
-
         />
 
     <CheckBox
@@ -64,7 +66,7 @@
         android:text="Morgens"
         android:id="@+id/c1"
         android:layout_below="@id/Dosierung"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="50dp"
         android:textColor="@android:color/white"
         />
 
@@ -82,7 +84,7 @@
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Abends"
+        android:text="NMtgs"
         android:id="@+id/c3"
         android:layout_toRightOf="@id/c2"
         android:layout_below="@id/Dosierung"
@@ -90,6 +92,16 @@
         android:textColor="@android:color/white"
         />
 
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Abends"
+        android:id="@+id/c4"
+        android:layout_toRightOf="@id/c3"
+        android:layout_below="@id/Dosierung"
+        android:layout_marginTop="30dp"
+        android:textColor="@android:color/white"
+        />
 
     <TextView
         android:layout_width="400dp"
@@ -108,57 +120,58 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Beginn"
         android:id="@+id/Beginn"
         android:textColor="@android:color/white"
         android:layout_below="@id/Dauer"
+        android:layout_centerHorizontal="true"
+        android:textSize="20dp"
+        android:textStyle="italic"
+
         />
 
     <CalendarView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/Beginn"
-        android:layout_toEndOf="@id/Beginn"
-        android:layout_below="@id/Beginn"
         android:id="@+id/cw1"
-        
+        android:layout_width="fill_parent"
+        android:layout_height="200dp"
+        android:layout_below="@id/Beginn"
+        android:layout_centerHorizontal="true"
+
         />
 
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Ende"
         android:id="@+id/Ende"
         android:textColor="@android:color/white"
         android:layout_below="@id/cw1"
+        android:layout_centerHorizontal="true"
+        android:textSize="20dp"
+        android:textStyle="italic"
+
         />
 
     <CalendarView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/cw2"
-        android:layout_toRightOf="@id/Ende"
-        android:layout_toEndOf="@id/Ende"
+        android:layout_width="fill_parent"
+        android:layout_height="200dp"
         android:layout_below="@id/Ende"
-        android:showWeekNumber="false"
-
+        android:layout_centerHorizontal="true"
 
         />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/Fertig"
-        android:text="Fertig"
-        android:layout_centerVertical="true"
+        android:id="@+id/Speichern"
+        android:text="Speichern"
+        android:layout_centerHorizontal="true"
         android:layout_below="@id/cw2"
-        android:layout_toRightOf="@id/spinner_dosierung"
-        android:layout_toEndOf="@id/spinner_dosierung"
         android:textStyle="bold"
         android:textColor="@android:color/white"
+        android:layout_marginTop="20dp"
 
         />
 
