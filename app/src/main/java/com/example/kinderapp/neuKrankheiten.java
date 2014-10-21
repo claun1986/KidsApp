@@ -83,7 +83,7 @@ public class neuKrankheiten extends Activity{
 
                         //Text Feld erzeugen bei Datum-Auswahl
                         TextView tvBeginn = (TextView) findViewById(R.id.tvBeginn);
-                        tvBeginn.setText(dayOfMonth + ". " + monthOfYear + ". " + year);
+                        tvBeginn.setText(dayOfMonth + "." + monthOfYear + "." + year);
 
                         //Toast.makeText(getApplicationContext(), year + "-" + monthOfYear + "-" + dayOfMonth, Toast.LENGTH_LONG).show();
                     }
@@ -105,7 +105,7 @@ public class neuKrankheiten extends Activity{
                     public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
 
                         TextView tvEnde = (TextView) findViewById(R.id.tvEnde);
-                        tvEnde.setText( dayOfMonth + ". " + monthOfYear + ". " +year );
+                        tvEnde.setText( dayOfMonth + "." + monthOfYear + "." +year );
                     }
                 }, mYear, mMonth, mDay);
         myFancyDatePicker1.show();

@@ -16,7 +16,7 @@ public class splashscreen extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splashscreen);
 
-        final Intent intent = new Intent(this, screen1.class);
+        final Intent intent = new Intent(this, login.class);
         RelativeLayout Layout = (RelativeLayout) findViewById(R.id.rl1);
         Layout.setOnClickListener(new View.OnClickListener() {
       @Override

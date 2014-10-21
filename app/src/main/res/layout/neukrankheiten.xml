@@ -29,7 +29,7 @@
         android:textSize="30dp"
         android:gravity="center"
         android:paddingTop="10dp"
-        android:textStyle="bold" />
+        android:textStyle="bold"/>
 
 
     <EditText
@@ -55,7 +55,11 @@
         android:background="#ffcccccc"
         android:gravity="center"
         android:textSize="30dp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:shadowColor="@android:color/white"
+        android:shadowDx="4"
+        android:shadowDy="4"
+        android:shadowRadius="2"/>
 
 
 

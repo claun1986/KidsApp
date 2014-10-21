@@ -33,7 +33,11 @@
         android:id="@+id/textView"
         android:layout_alignBottom="@+id/imgkind1"
         android:layout_centerHorizontal="true"
-        android:textColor="#A31D80" />
+        android:textColor="#A31D80"
+        android:shadowColor="@android:color/white"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="2"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -43,7 +47,11 @@
         android:id="@+id/textView2"
         android:layout_alignBottom="@+id/imgkind2"
         android:layout_centerHorizontal="true"
-        android:textColor="#A31D80" />
+        android:textColor="#A31D80"
+        android:shadowColor="@android:color/white"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="2"/>
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -54,6 +62,8 @@
         android:layout_marginTop="36dp"
         android:layout_below="@+id/imgkind2"
         android:layout_centerHorizontal="true"
-        android:textColor="@android:color/white"/>
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        />
 
 </RelativeLayout>

@@ -36,6 +36,10 @@
         android:layout_below="@id/neuesMedikament"
         android:layout_centerHorizontal="true"
         android:layout_margin="20dp"
+        android:shadowColor="@android:color/white"
+        android:shadowDx="4"
+        android:shadowDy="4"
+        android:shadowRadius="2"
         />
 
 
@@ -115,6 +119,10 @@
         android:textStyle="bold"
         android:layout_below="@+id/c1"
         android:layout_marginTop="30dp"
+        android:shadowColor="@android:color/white"
+        android:shadowDx="4"
+        android:shadowDy="4"
+        android:shadowRadius="2"
         />
 
 
