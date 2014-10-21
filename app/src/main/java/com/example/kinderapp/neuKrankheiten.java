@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.CalendarView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.Adapter;
@@ -39,11 +38,11 @@ public class neuKrankheiten extends Activity{
         ende.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showDatePickerDialog();
+                showDatePickerDialog1();
             }
         });
 
-        //SPINNER
+//SPINNER
         Spinner spinner = (Spinner) findViewById(R.id.spinner_dosierung);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.dosierung, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -51,7 +50,7 @@ public class neuKrankheiten extends Activity{
 
         final LinearLayout ll_container = (LinearLayout) findViewById(R.id.newMedField);
 
-        //NEUES MEDIKAMENTEN FELD HINZUFÜGEN
+//NEUES MEDIKAMENTEN FELD HINZUFÜGEN
         Button add2 = (Button) findViewById(R.id.add2);
         add2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,9 +63,8 @@ public class neuKrankheiten extends Activity{
             }
         });
 
-//        //CALENDER VIEW
-//        CalendarView cw1 = (CalendarView) findViewById(R.id.cw1);
-//        cw1.setDate(2014);
+
+//DATE PICKER
     }
     private void showDatePickerDialog() {
         // Datum von heute auslesen
@@ -93,10 +91,10 @@ public class neuKrankheiten extends Activity{
 
         // DatePickerDialog anschauen
         myFancyDatePicker.show();
+
     }
 
-    private void showDatePickerDialog() {
-        // Datum von heute auslesen
+    private void showDatePickerDialog1() {
         final Calendar c = Calendar.getInstance();
         int mYear = c.get(Calendar.YEAR);
         int mMonth = c.get(Calendar.MONTH);
@@ -106,15 +104,10 @@ public class neuKrankheiten extends Activity{
                     @Override
                     public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
 
-
-                        //Text Feld erzeugen bei Datum-Auswahl
-
                         TextView tvEnde = (TextView) findViewById(R.id.tvEnde);
                         tvEnde.setText( dayOfMonth + ". " + monthOfYear + ". " +year );
                     }
                 }, mYear, mMonth, mDay);
-
-        // DatePickerDialog anschauen
         myFancyDatePicker1.show();
     }
     }

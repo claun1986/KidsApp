@@ -125,6 +125,11 @@
         android:text="Beginn"
         android:id="@+id/Beginn"
         android:layout_below="@id/Dauer"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp"
+        android:textColor="@android:color/white"
+
+
         />
 
     <TextView
@@ -132,7 +137,15 @@
         android:layout_height="wrap_content"
         android:id="@+id/tvBeginn"
         android:layout_toRightOf="@id/Beginn"
-        android:layout_below="@id/Dauer"/>
+        android:layout_below="@id/Dauer"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="30dp"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:textColor="@android:color/white"
+
+
+        />
 
 
         />
@@ -143,6 +156,11 @@
         android:text="Ende"
         android:id="@+id/Ende"
         android:layout_below="@id/Beginn"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="30dp"
+        android:textColor="@android:color/white"
+
+
         />
 
     <TextView
@@ -151,6 +169,14 @@
         android:id="@+id/tvEnde"
         android:layout_toRightOf="@id/Ende"
         android:layout_below="@id/Beginn"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="30dp"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+
+
         />
 
 
