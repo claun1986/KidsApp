@@ -14,7 +14,6 @@ import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 import android.widget.DatePicker;
 import android.widget.Toast;
-
 import java.util.Calendar;
 
 /**
@@ -28,8 +27,16 @@ public class neuKrankheiten extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.neukrankheiten);
 
-        Button datum = (Button) findViewById(R.id.datum);
-        datum.setOnClickListener(new View.OnClickListener() {
+        Button beginn = (Button) findViewById(R.id.Beginn);
+        beginn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDatePickerDialog();
+            }
+        });
+
+        Button ende = (Button) findViewById(R.id.Ende);
+        ende.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showDatePickerDialog();
@@ -74,12 +81,41 @@ public class neuKrankheiten extends Activity{
                 new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                        Toast.makeText(getApplicationContext(), year + "-" + monthOfYear + "-" + dayOfMonth, Toast.LENGTH_LONG).show();
+
+
+                        //Text Feld erzeugen bei Datum-Auswahl
+                        TextView tvBeginn = (TextView) findViewById(R.id.tvBeginn);
+                        tvBeginn.setText(dayOfMonth + ". " + monthOfYear + ". " + year);
+
+                        //Toast.makeText(getApplicationContext(), year + "-" + monthOfYear + "-" + dayOfMonth, Toast.LENGTH_LONG).show();
                     }
                 }, mYear, mMonth, mDay);
 
         // DatePickerDialog anschauen
         myFancyDatePicker.show();
+    }
+
+    private void showDatePickerDialog() {
+        // Datum von heute auslesen
+        final Calendar c = Calendar.getInstance();
+        int mYear = c.get(Calendar.YEAR);
+        int mMonth = c.get(Calendar.MONTH);
+        int mDay = c.get(Calendar.DAY_OF_MONTH);
+        DatePickerDialog myFancyDatePicker1 = new DatePickerDialog(this,
+                new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+
+
+                        //Text Feld erzeugen bei Datum-Auswahl
+
+                        TextView tvEnde = (TextView) findViewById(R.id.tvEnde);
+                        tvEnde.setText( dayOfMonth + ". " + monthOfYear + ". " +year );
+                    }
+                }, mYear, mMonth, mDay);
+
+        // DatePickerDialog anschauen
+        myFancyDatePicker1.show();
     }
     }
 

@@ -118,38 +118,39 @@
         />
 
 
-    <TextView
+
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Beginn"
         android:id="@+id/Beginn"
-        android:textColor="@android:color/white"
         android:layout_below="@id/Dauer"
-        android:layout_centerHorizontal="true"
-        android:textSize="20dp"
-        android:textStyle="italic"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvBeginn"
+        android:layout_toRightOf="@id/Beginn"
+        android:layout_below="@id/Dauer"/>
+
 
         />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Datum setzen"
-        android:id="@+id/datum"
+        android:text="Ende"
+        android:id="@+id/Ende"
         android:layout_below="@id/Beginn"
-        android:gravity="center"/>
+        />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ende"
-        android:id="@+id/Ende"
-        android:textColor="@android:color/white"
-        android:layout_below="@id/datum"
-        android:layout_centerHorizontal="true"
-        android:textSize="20dp"
-        android:textStyle="italic"
-
+        android:id="@+id/tvEnde"
+        android:layout_toRightOf="@id/Ende"
+        android:layout_below="@id/Beginn"
         />
 
 
@@ -162,7 +163,7 @@
         android:layout_below="@id/Ende"
         android:textStyle="bold"
         android:textColor="@android:color/white"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="50dp"
 
         />
 
