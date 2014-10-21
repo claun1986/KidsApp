@@ -31,12 +31,25 @@
         android:paddingTop="10dp"
         android:textStyle="bold" />
 
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:id="@+id/neueKrankheit"
+        android:textColor="#FFD524"
+        android:layout_marginTop="40dp"
+        android:layout_below="@id/Krankheiten"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:hint="Neue Krankheit eingeben"
+        android:textColorHint="#c6616161" />
+
     <TextView
         android:layout_width="400dp"
         android:layout_height="50dp"
         android:id="@+id/Medikamente"
         android:text="Medikamente"
-        android:layout_below="@+id/Krankheiten"
+        android:layout_below="@+id/neueKrankheit"
         android:layout_marginTop="30dp"
         android:textColor="#A31D80"
         android:background="#ffcccccc"
