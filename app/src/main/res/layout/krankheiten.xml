@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    android:background="#97646464"
+
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rl3">
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:id="@+id/imgkind1"
+            android:src="@drawable/icon"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:layout_width="400dp"
+            android:layout_height="70dp"
+            android:id="@+id/Krankheit1"
+            android:text="Krankheiten 1"
+            android:textColor="#FFD524"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_toLeftOf="@+id/imgkind1"/>
+
+        <TextView
+            android:layout_width="400dp"
+            android:layout_height="70dp"
+            android:id="@+id/Medikament1"
+            android:text="Medikament1"
+            android:layout_below="@+id/Krankheit1"
+            android:layout_marginTop="40dp"
+            android:textColor="#A31D80"
+            android:background="#FFCCCCCC"
+            android:gravity="center"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:shadowColor="@android:color/white"
+            android:shadowDx="4"
+            android:shadowDy="4"
+            android:shadowRadius="2"
+            android:lines="2"
+            android:maxLines="2"
+            />
+
+
+
+
+
+
+
+
+
+
+
+        </RelativeLayout>
+
+</ScrollView>

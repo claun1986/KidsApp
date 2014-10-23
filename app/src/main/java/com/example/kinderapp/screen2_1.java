@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 /**
  * Created by Sarah on 13.10.14.
@@ -24,5 +25,13 @@ public class screen2_1 extends Activity {
             }
         });
 
+        final Intent intent2 = new Intent(this, krankheiten.class);
+        TextView krankheiten = (TextView) findViewById(R.id.Krankheit1);
+        krankheiten.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(intent2);
+            }
+        });
     }
     }

@@ -5,12 +5,12 @@
     <application
         android:allowBackup="true"
         android:icon="@drawable/launcher_logo"
-        android:label="@string/app_name"
+        android:label="KidsApp"
         android:theme="@style/AppTheme" >
 
         <activity
             android:name=".splashscreen"
-            android:label="Welcome to KidsApp"
+            android:label="KidsApp"
             android:screenOrientation="portrait">
 
             <intent-filter>
@@ -23,13 +23,13 @@
 
         <activity android:name=".login"
             android:screenOrientation="portrait"
-            android:label="login"
+            android:label="KidsApp Login"
             ></activity>
 
 
         <activity android:name=".screen1"
             android:screenOrientation="portrait"
-            android:label="Select a Child"
+            android:label="Wähle ein Kind aus"
             ></activity>
 
 
@@ -45,6 +45,10 @@
         <activity android:name=".neuKrankheiten"
             android:screenOrientation="portrait"
             android:label=""></activity>
+
+        <activity android:name=".krankheiten"
+            android:screenOrientation="portrait"
+            android:label="Krankheit1"></activity>
 
     </application>
 
