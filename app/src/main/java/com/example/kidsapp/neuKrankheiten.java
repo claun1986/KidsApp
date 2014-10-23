@@ -1,4 +1,4 @@
-package com.example.kinderapp;
+package com.example.kidsapp;
 
 import android.app.Activity;
 import android.app.DatePickerDialog;
@@ -8,11 +8,9 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
-import android.widget.Adapter;
-import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 import android.widget.DatePicker;
-import android.widget.Toast;
+
 import java.util.Calendar;
 
 /**
@@ -110,6 +108,10 @@ public class neuKrankheiten extends Activity{
                 }, mYear, mMonth, mDay);
         myFancyDatePicker1.show();
     }
+
+    Button speichern = (Button) findViewById(R.id.Speichern);
+
+
     }
 
 

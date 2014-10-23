@@ -1,4 +1,4 @@
-package com.example.kinderapp;
+package com.example.kidsapp;
 
 import android.app.Activity;
 import android.os.Bundle;

@@ -26,7 +26,7 @@
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="50dp"
-        android:text="Dosierung"
+        android:text="@string/Dosierung"
         android:textColor="#A31D80"
         android:background="#FFCCCCCC"
         android:gravity="center"
@@ -67,7 +67,7 @@
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Morgens"
+        android:text="@string/Morgens"
         android:id="@+id/c1"
         android:layout_below="@id/Dosierung"
         android:layout_marginTop="50dp"
@@ -77,7 +77,7 @@
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Mittags"
+        android:text="@string/Mittags"
         android:id="@+id/c2"
         android:layout_toRightOf="@id/c1"
         android:layout_below="@id/Dosierung"
@@ -88,7 +88,7 @@
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="NMtgs"
+        android:text="@string/Nachmittags"
         android:id="@+id/c3"
         android:layout_toRightOf="@id/c2"
         android:layout_below="@id/Dosierung"
@@ -99,7 +99,7 @@
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Abends"
+        android:text="@string/Abends"
         android:id="@+id/c4"
         android:layout_toRightOf="@id/c3"
         android:layout_below="@id/Dosierung"
@@ -111,7 +111,7 @@
         android:layout_width="400dp"
         android:layout_height="50dp"
         android:id="@+id/Dauer"
-        android:text="Dauer"
+        android:text="@string/Dauer"
         android:textColor="#A31D80"
         android:background="#FFCCCCCC"
         android:gravity="center"
@@ -130,7 +130,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Beginn"
+        android:text="@string/Beginn"
         android:id="@+id/Beginn"
         android:layout_below="@id/Dauer"
         android:layout_marginTop="30dp"
@@ -161,7 +161,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ende"
+        android:text="@string/Ende"
         android:id="@+id/Ende"
         android:layout_below="@id/Beginn"
         android:layout_marginTop="20dp"
@@ -191,8 +191,8 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/Speichern"
-        android:text="Speichern"
+        android:id="@+id/speichern"
+        android:text="@string/Speichern"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/Ende"
         android:textStyle="bold"

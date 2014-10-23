@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.kinderapp" >
+    package="com.example.kidsapp" >
 
     <application
         android:allowBackup="true"
@@ -9,7 +9,7 @@
         android:theme="@style/AppTheme" >
 
         <activity
-            android:name=".splashscreen"
+            android:name="com.example.kidsapp.splashscreen"
             android:label="KidsApp"
             android:screenOrientation="portrait">
 
@@ -21,32 +21,32 @@
         </activity>
 
 
-        <activity android:name=".login"
+        <activity android:name="com.example.kidsapp.login"
             android:screenOrientation="portrait"
             android:label="KidsApp Login"
             ></activity>
 
 
-        <activity android:name=".screen1"
+        <activity android:name="com.example.kidsapp.screen1"
             android:screenOrientation="portrait"
             android:label="Wähle ein Kind aus"
             ></activity>
 
 
-        <activity android:name=".screen2"
+        <activity android:name="com.example.kidsapp.screen2"
             android:screenOrientation="portrait"
             android:label=""
             ></activity>
 
-        <activity android:name=".screen2_1"
+        <activity android:name="com.example.kidsapp.screen2_1"
             android:screenOrientation="portrait"
             android:label=""></activity>
 
-        <activity android:name=".neuKrankheiten"
+        <activity android:name="com.example.kidsapp.neuKrankheiten"
             android:screenOrientation="portrait"
             android:label=""></activity>
 
-        <activity android:name=".krankheiten"
+        <activity android:name="com.example.kidsapp.krankheiten"
             android:screenOrientation="portrait"
             android:label="Krankheit1"></activity>
 
