@@ -2,6 +2,7 @@ package com.example.kidsapp;
 
 import android.app.Activity;
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -108,8 +109,14 @@ public class neuKrankheiten extends Activity{
                 }, mYear, mMonth, mDay);
         myFancyDatePicker1.show();
     }
+//ALARM Activity öffnen
+    final Intent intent1 = new Intent(this, alarm.class);
 
-    Button speichern = (Button) findViewById(R.id.Speichern);
+
+
+
+//SPEICHERN Button speichern = (Button) findViewById(R.id.speichern);
+
 
 
     }

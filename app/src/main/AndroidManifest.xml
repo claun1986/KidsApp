@@ -42,13 +42,17 @@
             android:screenOrientation="portrait"
             android:label=""></activity>
 
-        <activity android:name="com.example.kidsapp.neuKrankheiten"
+        <activity android:name=".neuKrankheiten"
             android:screenOrientation="portrait"
             android:label=""></activity>
 
-        <activity android:name="com.example.kidsapp.krankheiten"
+        <activity android:name=".krankheiten"
             android:screenOrientation="portrait"
             android:label="Krankheit1"></activity>
+
+        <activity android:name=".alarm"
+            android:screenOrientation="portrait"
+            android:label="Alarm"></activity>
 
     </application>
 

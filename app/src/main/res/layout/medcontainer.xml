@@ -151,8 +151,6 @@
         android:textStyle="bold"
         android:textSize="20dp"
         android:textColor="@android:color/white"
-
-
         />
 
 
@@ -183,9 +181,42 @@
         android:textSize="20dp"
         android:textStyle="bold"
         android:textColor="@android:color/white"
-
-
         />
+
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkalarm"
+        android:layout_below="@id/Ende"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="40dp"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ic_alarm_set"
+        android:src="@drawable/ic_alarm_set"
+        android:layout_below="@id/Ende"
+        android:layout_toRightOf="@id/checkalarm"
+        android:layout_marginTop="30dp"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ic_alarm_add"
+        android:src="@drawable/ic_alarm_add"
+        android:layout_below="@id/Ende"
+        android:layout_toRightOf="@id/ic_alarm_set"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Alarm_add"
+        android:id="@+id/alarm_add"
+        android:layout_below="@id/Ende"
+        android:layout_toRightOf="@id/ic_alarm_add"
+        android:layout_marginTop="30dp"/>
+
 
 
     <Button
@@ -194,7 +225,7 @@
         android:id="@+id/speichern"
         android:text="@string/Speichern"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/Ende"
+        android:layout_below="@id/ic_alarm_set"
         android:textStyle="bold"
         android:textColor="@android:color/white"
         android:layout_marginTop="50dp"

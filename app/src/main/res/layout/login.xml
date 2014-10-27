@@ -24,7 +24,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enter E-Mail"
+        android:text="@string/enterEmail"
         android:id="@+id/tvMail"
         android:textSize="25dp"
         android:layout_below="@id/Login"
@@ -50,7 +50,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enter Password"
+        android:text="@string/EnterPassword"
         android:id="@+id/tvPW"
         android:textSize="25dp"
         android:layout_below="@id/email"
@@ -79,7 +79,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="OK"
+        android:text="@string/Ok"
         android:textSize="20dp"
         android:textStyle="bold"
         android:id="@+id/ok"
