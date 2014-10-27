@@ -7,7 +7,7 @@ import android.view.View;
 /**
  * Created by Sarah on 27.10.14.
  */
-public class alarm extends Activity {
+public class Alarm extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
