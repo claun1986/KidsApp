@@ -1,7 +1,12 @@
 package com.example.kidsapp;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.RelativeLayout;
 
 
 /**
@@ -15,6 +20,9 @@ public class neuKrankheiten extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.neukrankheiten);
     }
+
+
+
 
     }
 

@@ -39,11 +39,6 @@
         <activity android:name=".neuKrankheiten"
             android:screenOrientation="portrait"
             android:label="">
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
             </activity>
 
         <activity android:name=".krankheiten"
@@ -53,6 +48,17 @@
         <activity android:name=".Alarm"
             android:screenOrientation="portrait"
             android:label="Alarm"></activity>
+
+        <activity android:name=".Medcontainer"
+            android:screenOrientation="portrait"
+            android:label="">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            </activity>
 
     </application>
 

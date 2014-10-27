@@ -47,7 +47,7 @@ public class Medcontainer extends Activity{
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
-        final LinearLayout ll_container = (LinearLayout) findViewById(R.id.newMedField);
+//        final LinearLayout ll_container = (LinearLayout) findViewById(R.id.newMedField);
 
 //NEUES MEDIKAMENTEN FELD HINZUFÜGEN
         Button add2 = (Button) findViewById(R.id.add2);
