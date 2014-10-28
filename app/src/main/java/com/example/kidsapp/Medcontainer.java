@@ -50,17 +50,7 @@ public class Medcontainer extends Activity{
 //        final LinearLayout ll_container = (LinearLayout) findViewById(R.id.newMedField);
 
 //NEUES MEDIKAMENTEN FELD HINZUFÜGEN
-        Button add2 = (Button) findViewById(R.id.add2);
-        add2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                //TextView tv1 = new TextView(getApplicationContext());
-                //tv1.setText("TEST");
-                RelativeLayout rl = (RelativeLayout) getLayoutInflater().inflate(R.layout.medcontainer, null);
-                ll_container.addView(rl);
-            }
-        });
+//
 
 
 //DATE PICKER
