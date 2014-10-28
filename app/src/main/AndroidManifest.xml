@@ -12,6 +12,11 @@
             android:name="com.example.kidsapp.splashscreen"
             android:label="KidsApp"
             android:screenOrientation="portrait">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
 
@@ -38,13 +43,7 @@
 
         <activity android:name=".neuKrankheiten"
             android:screenOrientation="portrait"
-            android:label="">
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
+            android:label="KidsApp">
             </activity>
 
         <activity android:name=".krankheiten"
@@ -57,7 +56,7 @@
 
         <activity android:name=".Medcontainer"
             android:screenOrientation="portrait"
-            android:label="">
+            android:label="KidsApp">
 
             </activity>
 

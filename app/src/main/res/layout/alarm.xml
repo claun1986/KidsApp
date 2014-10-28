@@ -3,4 +3,24 @@
 <RelativeLayout
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android"></RelativeLayout>
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_alarm_add"
+         android:id="@+id/ic_alarm_add"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_alarm_set"
+        android:id="@+id/ic_alarm_set"
+        android:layout_toRightOf="@id/ic_alarm_add"
+        />
+
+
+
+    </RelativeLayout>

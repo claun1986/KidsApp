@@ -49,6 +49,15 @@ public class neuKrankheiten extends Activity {
             }
         });
 
+ //Button Alarm
+        Button setAlarm = (Button) findViewById(R.id.alarm_add);
+        setAlarm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showAlarm();
+            }
+        });
+
 
 
      }
@@ -56,17 +65,28 @@ public class neuKrankheiten extends Activity {
 
  //DIALOG medcontainer anzeigen
    private void showDialog() {
-        LayoutInflater inflater = getLayoutInflater();
-        AlertDialog.Builder builder = new AlertDialog.Builder(neuKrankheiten.this);
-        View rootView = inflater.inflate(R.layout.medcontainer, null); //root View als Variable gesetzt, um neuKrankheiten.xml anzusprechen
+       LayoutInflater inflater = getLayoutInflater();
+       AlertDialog.Builder builder = new AlertDialog.Builder(neuKrankheiten.this);
+       View rootView = inflater.inflate(R.layout.medcontainer, null); //root View als Variable gesetzt, um neuKrankheiten.xml anzusprechen
 
-        builder.setView(rootView);
-        AlertDialog dialog = builder.create();
-        dialog.show();
+       builder.setView(rootView);
+       AlertDialog dialog = builder.create();
+       dialog.show();
+   }
+//Alarm anzeigen
+   private void showAlarm() {
+        LayoutInflater inflater1 = getLayoutInflater();
+        AlertDialog.Builder builder1 = new AlertDialog.Builder(neuKrankheiten.this);
+        View rootView2 = inflater1.inflate(R.layout.alarm, null);
+
+        builder1.setView(rootView2);
+        AlertDialog dialog1 = builder1.create();
+        dialog1.show();
+    }
 
 
  //buttons Datepicker
-       Button beginn = (Button) rootView.findViewById(R.id.Beginn);
+       Button beginn = (Button) findViewById(R.id.Beginn);
        beginn.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
@@ -107,7 +127,7 @@ public class neuKrankheiten extends Activity {
 
 
                         //Text Feld erzeugen bei Datum-Auswahl
-                        TextView tvBeginn = (TextView) rootView.findViewById(R.id.tvBeginn);
+                        TextView tvBeginn = (TextView) findViewById(R.id.tvBeginn);
                         tvBeginn.setText(dayOfMonth + "." + (monthOfYear+1) + "." + year); //+1 weil default 0 ist(monat wird minus 1 angezeigt)
 
                         //Toast.makeText(getApplicationContext(), year + "-" + monthOfYear + "-" + dayOfMonth, Toast.LENGTH_LONG).show();
