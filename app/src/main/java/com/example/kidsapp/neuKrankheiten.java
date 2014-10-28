@@ -54,7 +54,7 @@ public class neuKrankheiten extends Activity {
      }
 
 
- //medcontainer anzeigen
+ //DIALOG medcontainer anzeigen
    private void showDialog() {
         LayoutInflater inflater = getLayoutInflater();
         AlertDialog.Builder builder = new AlertDialog.Builder(neuKrankheiten.this);
@@ -107,7 +107,7 @@ public class neuKrankheiten extends Activity {
 
 
                         //Text Feld erzeugen bei Datum-Auswahl
-                        TextView tvBeginn = (TextView) findViewById(R.id.tvBeginn);
+                        TextView tvBeginn = (TextView) rootView.findViewById(R.id.tvBeginn);
                         tvBeginn.setText(dayOfMonth + "." + (monthOfYear+1) + "." + year); //+1 weil default 0 ist(monat wird minus 1 angezeigt)
 
                         //Toast.makeText(getApplicationContext(), year + "-" + monthOfYear + "-" + dayOfMonth, Toast.LENGTH_LONG).show();
