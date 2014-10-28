@@ -3,6 +3,7 @@ package com.example.kidsapp;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -11,24 +12,37 @@ import android.widget.RelativeLayout;
 
 public class splashscreen extends Activity {
 
+    // Splash screen timer
+    private static int SPLASH_TIME_OUT = 3000;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splashscreen);
 
-        final Intent intent = new Intent(this, login.class);
-        RelativeLayout Layout = (RelativeLayout) findViewById(R.id.rl1);
-        Layout.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View v) {
-                startActivity(intent);
-      }
-                                  }
+        new Handler().postDelayed(new Runnable() {
 
-        );
+            /*
+             * Showing splash screen with a timer. This will be useful when you
+             * want to show case your app logo / company
+             */
 
+            @Override
+            public void run() {
+                // This method will be executed once the timer is over
+                // Start your app main activity
+                Intent i = new Intent(splashscreen.this, screen1.class);
+                startActivity(i);
 
+                // close this activity
+                finish();
+            }
+        }, SPLASH_TIME_OUT);
     }
+
+
+
+
 
 
     @Override
