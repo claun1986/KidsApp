@@ -13,7 +13,7 @@ import android.widget.RelativeLayout;
 public class splashscreen extends Activity {
 
     // Splash screen timer
-    private static int SPLASH_TIME_OUT = 3000;
+    private static int SPLASH_TIME_OUT = 1500;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +31,7 @@ public class splashscreen extends Activity {
             public void run() {
                 // This method will be executed once the timer is over
                 // Start your app main activity
-                Intent i = new Intent(splashscreen.this, screen1.class);
+                Intent i = new Intent(splashscreen.this, login.class);
                 startActivity(i);
 
                 // close this activity

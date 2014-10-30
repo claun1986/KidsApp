@@ -33,7 +33,7 @@
             android:gravity="center"
             android:layout_toLeftOf="@+id/imgkind1"/>
 
-        <TextView
+        <Button
             android:layout_width="400dp"
             android:layout_height="70dp"
             android:id="@+id/Medikament1"

@@ -26,17 +26,29 @@ import java.util.Calendar;
 public class neuKrankheiten extends Activity {
 
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.neukrankheiten);
+
+
+//SPINNER
+        LayoutInflater inflater = getLayoutInflater();
+        final View rootView = inflater.inflate(R.layout.medcontainer, null); //root View als Variable gesetzt, um neuKrankheiten.xml anzusprechen
+
+        Spinner spinner = (Spinner) rootView.findViewById(R.id.spinner_dosierung);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.dosierung, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
 
 //dialog button drücken
         Button add2 = (Button) findViewById(R.id.add2);
         add2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showDialog();
+                showDialog(rootView);
             }
         });
 
@@ -50,24 +62,41 @@ public class neuKrankheiten extends Activity {
         });
 
  //Button Alarm
-        Button setAlarm = (Button) findViewById(R.id.alarm_add);
+
+        Button setAlarm = (Button) rootView.findViewById(R.id.alarm_add);
         setAlarm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showAlarm();
             }
         });
+ //buttons Datepicker
 
+        Button beginn = (Button) rootView.findViewById(R.id.Beginn);
+        beginn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDatePickerDialog();
 
+            }
+        });
+
+        Button ende = (Button) rootView.findViewById(R.id.Ende);
+        ende.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDatePickerDialog1();
+            }
+        });
 
      }
 
 
  //DIALOG medcontainer anzeigen
-   private void showDialog() {
+   private void showDialog(View rootView) {
+
        LayoutInflater inflater = getLayoutInflater();
        AlertDialog.Builder builder = new AlertDialog.Builder(neuKrankheiten.this);
-       View rootView = inflater.inflate(R.layout.medcontainer, null); //root View als Variable gesetzt, um neuKrankheiten.xml anzusprechen
 
        builder.setView(rootView);
        AlertDialog dialog = builder.create();
@@ -77,40 +106,20 @@ public class neuKrankheiten extends Activity {
    private void showAlarm() {
         LayoutInflater inflater1 = getLayoutInflater();
         AlertDialog.Builder builder1 = new AlertDialog.Builder(neuKrankheiten.this);
-        View rootView2 = inflater1.inflate(R.layout.alarm, null);
+        View rootView1 = inflater1.inflate(R.layout.alarm, null);
 
-        builder1.setView(rootView2);
+        builder1.setView(rootView1);
         AlertDialog dialog1 = builder1.create();
         dialog1.show();
     }
 
 
- //buttons Datepicker
-       Button beginn = (Button) findViewById(R.id.Beginn);
-       beginn.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-               showDatePickerDialog();
-           }
-       });
-
-       Button ende = (Button) rootView.findViewById(R.id.Ende);
-       ende.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-               showDatePickerDialog1();
-           }
-       });
 
 
-//SPINNER
-       Spinner spinner = (Spinner) rootView.findViewById(R.id.spinner_dosierung);
-       ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.dosierung, android.R.layout.simple_spinner_item);
-       adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-       spinner.setAdapter(adapter);
 
-       //DATE PICKER
-   }
+
+//DATE PICKER
+
     private void showDatePickerDialog() {
         // Datum von heute auslesen
         final Calendar c = Calendar.getInstance();
