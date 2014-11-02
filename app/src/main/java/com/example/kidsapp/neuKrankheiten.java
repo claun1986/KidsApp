@@ -7,15 +7,25 @@ import android.app.Dialog;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.content.Context;
+import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.DatePicker;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.RelativeLayout;
+import android.widget.SimpleCursorAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.util.Log;
+
+//import org.apache.commons.logging.Log;
 
 import java.util.Calendar;
 
@@ -25,6 +35,10 @@ import java.util.Calendar;
  */
 public class neuKrankheiten extends Activity {
 
+    //DATENBANK http://android-developers.de/tutorials-faqs/der-umgang-der-sqlite-datenbank-414.html
+    final static String MY_DB_NAME = "MED_DB";
+    final static String MY_DB_TABLE = "Med_Name";
+    final static String tag="kidsapp";
 
 
 
@@ -33,26 +47,77 @@ public class neuKrankheiten extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.neukrankheiten);
 
+        SQLiteDatabase myDB= null;
+        try {
+            myDB = this.openOrCreateDatabase(MY_DB_NAME, MODE_PRIVATE, null);
+            Cursor c = myDB.rawQuery("SELECT _id, name || ', ' || name, menge, dosierung, morgens, mittags, abends, beginn, ende FROM "+MY_DB_TABLE, null);
 
-//SPINNER
-        LayoutInflater inflater = getLayoutInflater();
-        final View rootView = inflater.inflate(R.layout.medcontainer, null); //root View als Variable gesetzt, um neuKrankheiten.xml anzusprechen
+            startManagingCursor(c);
+            getListView().setOnCreateContextMenuListener(this);
+            //nicht fertig, noch andere felder einfügen und code anpassen
+            final SimpleCursorAdapter adapter = new SimpleCursorAdapter(this, R.layout.neukrankheiten, c, new String[] {" _id"}, new int[] {R.id.neuesMedikament});
+            adapter.setViewBinder(new SimpleCursorAdapter.ViewBinder() {
+                @Override
+                public boolean setViewValue(View view, Cursor cursor, int columnIndex) {
+                    final String ColNameModel = cursor.getString(1); //statt theCursor im tutorial
+                    ((TextView)view).setText(ColNameModel);
+                    return true;
+                }
+            });
+            this.setListAdapter(adapter);
+        } finally {
+            if(myDB != null)
+                myDB.close();
+        }
 
-        Spinner spinner = (Spinner) rootView.findViewById(R.id.spinner_dosierung);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.dosierung, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
 
+
+
+        /*     final ImageButton add_alarm = (ImageButton) findViewById(R.id.alarm_add);
+            add_alarm.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(null);
+                    builder.setMessage("ALARM");
+                    builder.setTitle("ALARM");
+                    AlertDialog dialog = builder.create();
+                }
+            });
+
+
+//Add Alarm Dialog
+//add alarm dialog
+    private void setAlarm() {
+        ImageButton add_alarm = (ImageButton) findViewById(R.id.alarm_add);
+        add_alarm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(getApplicationContext());
+                builder.setMessage("ALARM");
+                builder.setTitle("ALARM");
+                AlertDialog dialog = builder.create();
+            }
+        });
+    }
+        */
+//speichern
+    /*    Button speichern = (Button) findViewById(R.id.speichern);
+        speichern.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                medSpeichern();
+            }
+        });
+    */
 //dialog button drücken
         Button add2 = (Button) findViewById(R.id.add2);
         add2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showDialog(rootView);
+                showDialog();
             }
         });
-
- //button notification drücken
+//button notification drücken
         Button not = (Button) findViewById(R.id.not_button);
         not.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,23 +126,27 @@ public class neuKrankheiten extends Activity {
             }
         });
 
- //Button Alarm
 
-        Button setAlarm = (Button) rootView.findViewById(R.id.alarm_add);
-        setAlarm.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showAlarm();
-            }
-        });
- //buttons Datepicker
+    }
 
+
+    //medcontainer anzeigen
+    private void showDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(neuKrankheiten.this);
+        LayoutInflater inflater = getLayoutInflater();
+        View rootView = inflater.inflate(R.layout.medcontainer, null); //root View als Variable gesetzt, um neuKrankheiten.xml??? oder medcontainer? anzusprechen
+
+        builder.setView(rootView);
+        AlertDialog dialog = builder.create();
+        dialog.show();
+
+
+//buttons Datepicker
         Button beginn = (Button) rootView.findViewById(R.id.Beginn);
         beginn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showDatePickerDialog();
-
             }
         });
 
@@ -89,37 +158,15 @@ public class neuKrankheiten extends Activity {
             }
         });
 
-     }
 
-
- //DIALOG medcontainer anzeigen
-   private void showDialog(View rootView) {
-
-       LayoutInflater inflater = getLayoutInflater();
-       AlertDialog.Builder builder = new AlertDialog.Builder(neuKrankheiten.this);
-
-       builder.setView(rootView);
-       AlertDialog dialog = builder.create();
-       dialog.show();
-   }
-//Alarm anzeigen
-   private void showAlarm() {
-        LayoutInflater inflater1 = getLayoutInflater();
-        AlertDialog.Builder builder1 = new AlertDialog.Builder(neuKrankheiten.this);
-        View rootView1 = inflater1.inflate(R.layout.alarm, null);
-
-        builder1.setView(rootView1);
-        AlertDialog dialog1 = builder1.create();
-        dialog1.show();
-    }
-
-
-
-
-
+//SPINNER
+        Spinner spinner = (Spinner) rootView.findViewById(R.id.spinner_dosierung);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.dosierung, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
 
 //DATE PICKER
-
+    }
     private void showDatePickerDialog() {
         // Datum von heute auslesen
         final Calendar c = Calendar.getInstance();
@@ -134,9 +181,11 @@ public class neuKrankheiten extends Activity {
                     @Override
                     public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
 
+                        LayoutInflater inflater = getLayoutInflater();
+                        View rootView = inflater.inflate(R.layout.medcontainer, null); //root View als Variable gesetzt, um neuKrankheiten.xml??? oder medcontainer? anzusprechen
 
                         //Text Feld erzeugen bei Datum-Auswahl
-                        TextView tvBeginn = (TextView) findViewById(R.id.tvBeginn);
+                        TextView tvBeginn = (TextView) rootView.findViewById(R.id.tvBeginn);
                         tvBeginn.setText(dayOfMonth + "." + (monthOfYear+1) + "." + year); //+1 weil default 0 ist(monat wird minus 1 angezeigt)
 
                         //Toast.makeText(getApplicationContext(), year + "-" + monthOfYear + "-" + dayOfMonth, Toast.LENGTH_LONG).show();
@@ -158,7 +207,10 @@ public class neuKrankheiten extends Activity {
                     @Override
                     public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
 
-                        TextView tvEnde = (TextView) findViewById(R.id.tvEnde);
+                        LayoutInflater inflater = getLayoutInflater();
+                        View rootView = inflater.inflate(R.layout.medcontainer, null); //root View als Variable gesetzt, um neuKrankheiten.xml??? oder medcontainer? anzusprechen
+
+                        TextView tvEnde = (TextView) rootView.findViewById(R.id.tvEnde);
                         tvEnde.setText( dayOfMonth + "." + (monthOfYear+1) + "." +year );
                     }
                 }, mYear, mMonth, mDay);
@@ -167,7 +219,7 @@ public class neuKrankheiten extends Activity {
 
 
 
- //Notification builder
+    //Notification builder
     private void notification(){
         Notification.Builder mBuilder = new Notification.Builder(this)
                 .setSmallIcon(R.drawable.ic_alarm_set)
@@ -179,6 +231,69 @@ public class neuKrankheiten extends Activity {
 
     }
 
+//Daten auslesen und speichern
+
+
+    //   private void medSpeichern() {
+//DATENBANK
+
+    private void onCreateDBandDBTabled()
+    {
+        SQLiteDatabase myDB = null;
+        try {
+            myDB = this.openOrCreateDatabase(MY_DB_NAME, MODE_PRIVATE, null);
+            myDB.execSQL("CREATE TABLE IF NOT EXISTS " + MY_DB_TABLE
+                    + " (_id integer primary key autoincrement, name varchar(100), menge varchar(100), dosierung integer(3), morgens boolean, mittags boolean, abends boolean, beginn date(100), ende date(100))"
+
+                    +";");
+
+
+        } finally {
+            if (myDB != null)
+                myDB.close();
+        }
+
+//Neuen Datensatz hinzufügen
+
+        EditText neuMed = (EditText) findViewById(R.id.neuesMedikament);
+        EditText menge = (EditText) findViewById(R.id.menge);
+        Spinner dosierung = (Spinner) findViewById(R.id.spinner_dosierung);
+        CheckBox morgens = (CheckBox) findViewById(R.id.c1);
+        CheckBox mittags = (CheckBox) findViewById(R.id.c2);
+        CheckBox abends = (CheckBox) findViewById(R.id.c3);
+        TextView beginn = (TextView) findViewById(R.id.tvBeginn);
+        TextView ende = (TextView) findViewById(R.id.tvEnde);
+        int i = dosierung.getSelectedItemPosition();
+
+        myDB.execSQL("INSERT INTO "+MY_DB_TABLE+" name, menge, dosierung, morgens, mittags, abends, beginn, ende) "
+                +"VALUES ('"+neuMed.getText().toString()+"',"+
+                "'"+menge.getText().toString()+"',"+
+                "'"+i+"',"+
+                "'"+morgens.getContext().toString()+"',"+
+                "'"+mittags.getContext().toString()+"',"+
+                "'"+abends.getContext().toString()+"',"+
+                "'"+beginn.getText().toString()+"',"+
+                "'"+ende.getText().toString()+"',"+
+                "');");
+        Log.v(tag, "Insert new Med: " +neuMed.getText().toString() + ", " +menge.getText().toString() + ", " +i+ ", " +morgens.getText().toString()+", " + mittags.getText().toString()+", "+ abends.getText().toString()+", "+ beginn.getText().toString()+", "+ ende.getText().toString());
+
+        if (getIntent().hasExtra("id")) {
+            long l = getIntent().getExtras().getLong("id");
+            myDB.execSQL("UPDATE "+MY_DB_TABLE+" SET" +
+                    "name ='"+neuMed.getText().toString()+"',"+
+                    "menge ='"+menge.getText().toString()+"',"+
+                    "doesierung ='"+i+"',"+
+                    "morgens ='"+morgens.getContext().toString()+"',"+
+                    "mittags ='"+mittags.getContext().toString()+"',"+
+                    "abends ='"+abends.getContext().toString()+"',"+
+                    "beginn ='"+beginn.getText().toString()+"',"+
+                    "ende ='"+ende.getText().toString()+"',"+
+                    "WHERE _id ="+l+";");
+            Log.v(tag, "Insert new Med: " +neuMed.getText().toString() + ", " +menge.getText().toString() + ", " +i+ ", " +morgens.getText().toString()+", " + mittags.getText().toString()+", "+ abends.getText().toString()+", "+ beginn.getText().toString()+", "+ ende.getText().toString() +" updated");
+        }
+
+
+    }
 
 
 
